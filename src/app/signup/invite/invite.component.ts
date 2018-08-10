@@ -50,7 +50,7 @@ export class InviteComponent implements OnInit {
     if (emails.length) {
       this.inviteService
         .invite(emails)
-        .subscribe(res => this.router.navigateByUrl('/signup'));
+        .subscribe(res => this.router.navigateByUrl('/welcome'));
     }
   }
 }

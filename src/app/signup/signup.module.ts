@@ -18,8 +18,13 @@ import { SignupService } from './signup.service';
 import { DataService } from '../shared/data.service';
 import { CreateWorkspaceComponent } from './details/create-workspace/create-workspace.component';
 import { TermsComponent } from './terms/terms.component';
+import { WelcomeComponent } from '../dashboard/welcome/welcome.component';
 
-import { PerfectScrollbarModule, PERFECT_SCROLLBAR_CONFIG, PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
+import {
+  PerfectScrollbarModule,
+  PERFECT_SCROLLBAR_CONFIG,
+  PerfectScrollbarConfigInterface
+} from 'ngx-perfect-scrollbar';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
@@ -44,12 +49,17 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     SetPasswordComponent,
     SetCompanyDetailsComponent,
     CreateWorkspaceComponent,
-    TermsComponent
+    TermsComponent,
+    WelcomeComponent
   ],
   exports: [SignupComponent],
-  providers: [SignupService, DataService, {
-    provide: PERFECT_SCROLLBAR_CONFIG,
-    useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG
-  }]
+  providers: [
+    SignupService,
+    DataService,
+    {
+      provide: PERFECT_SCROLLBAR_CONFIG,
+      useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG
+    }
+  ]
 })
 export class SignupModule {}
