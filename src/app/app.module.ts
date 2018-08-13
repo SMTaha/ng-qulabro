@@ -11,17 +11,18 @@ import { AppComponent } from './app.component';
 
 import { AuthInceptorService } from './shared/auth/auth-inceptor.service';
 import { ErrorInceptorService } from './shared/inceptors/error-inceptor.service';
+import { OnboardingModule } from './onboarding/onboarding.module';
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserModule,
-    SignupModule,
     FormsModule,
     ReactiveFormsModule,
-    AppRoutingModule,
     HttpModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule,
+    OnboardingModule
   ],
   providers: [
     {

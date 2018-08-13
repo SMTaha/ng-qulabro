@@ -25,6 +25,8 @@ import {
   PERFECT_SCROLLBAR_CONFIG,
   PerfectScrollbarConfigInterface
 } from 'ngx-perfect-scrollbar';
+import { OnboardingHeaderComponent } from '../onboarding-header/onboarding-header.component';
+import { OnboardingBodyModule } from '../onboarding-body/onboarding-body.module';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
@@ -36,11 +38,11 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
+    PerfectScrollbarModule,
     OnboardingHeaderModule,
-    PerfectScrollbarModule
+    OnboardingBodyModule
   ],
   declarations: [
-    OnboardingBodyComponent,
     SignupComponent,
     EmailComponent,
     VerifyComponent,

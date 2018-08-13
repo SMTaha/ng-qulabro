@@ -11,6 +11,8 @@ import { SetCompanyDetailsComponent } from '../signup/details/set-company-detail
 import { CreateWorkspaceComponent } from '../signup/details/create-workspace/create-workspace.component';
 import { TermsComponent } from '../signup/terms/terms.component';
 
+import { LoginComponent } from '../login/login.component';
+
 import { WelcomeComponent } from '../dashboard/welcome/welcome.component';
 
 const routes: Routes = [
@@ -34,7 +36,7 @@ const routes: Routes = [
     ]
   },
   { path: 'welcome', component: WelcomeComponent }, // Replace redirect to the actual component for this route
-  { path: 'login', redirectTo: '/signup' }, // Replace redirect to the actual component for this route
+  { path: 'login', component: LoginComponent }, // Replace redirect to the actual component for this route
   { path: '**', redirectTo: '/signup' } // Replace redirect to the actual component for this route
 ];
 
