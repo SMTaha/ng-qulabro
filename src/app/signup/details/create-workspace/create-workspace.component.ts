@@ -24,7 +24,7 @@ export class CreateWorkspaceComponent implements OnInit {
     this.signupService
       .createWorkSpace({ company_id, workspace })
       .subscribe(res => {
-        this.router.navigateByUrl('signup/invite');
+        this.router.navigateByUrl('signup/terms');
       });
   }
 }
