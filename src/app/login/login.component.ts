@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+
+import { LoginService } from './login.service';
 
 @Component({
   selector: 'app-login',
@@ -18,11 +21,16 @@ export class LoginComponent implements OnInit {
       // )
     ])
   });
-  constructor() {}
+  constructor(private loginService: LoginService, private router: Router) {}
 
   ngOnInit() {}
 
   onSubmit() {
-    console.log(this.form);
+    if (this.form.valid) {
+      const body = this.form.value;
+      this.loginService
+        .login(body)
+        .subscribe(res => this.router.navigateByUrl('/welcome'));
+    }
   }
 }
