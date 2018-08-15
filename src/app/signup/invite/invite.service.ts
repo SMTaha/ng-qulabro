@@ -1,17 +1,15 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-import { environment } from '../../../environments/environment';
+import { INVITE } from '../../common/constants';
 
 @Injectable({
   providedIn: 'root'
 })
 export class InviteService {
-  private readonly baseURL: string = environment.baseURL;
-
   constructor(private httpClient: HttpClient) {}
 
   invite(emails: Array<string>) {
-    return this.httpClient.post(`${this.baseURL}/v1/invite`, { emails });
+    return this.httpClient.post(INVITE, { emails });
   }
 }

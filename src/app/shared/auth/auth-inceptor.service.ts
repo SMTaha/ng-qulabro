@@ -6,14 +6,14 @@ import {
   HttpInterceptor,
   HttpClient
 } from '@angular/common/http';
+import { Headers, Http } from '@angular/http';
 
 import { Observable } from 'rxjs';
 import { switchMap, map } from 'rxjs/operators';
 
 import { AuthService } from './auth.service';
 
-import { environment } from '../../../environments/environment';
-import { Headers, Http } from '@angular/http';
+import { REFREASH } from '../../common/constants';
 
 @Injectable({
   providedIn: 'root'
@@ -52,13 +52,11 @@ export class AuthInceptorService implements HttpInterceptor {
     const TOKEN = this.auth.token;
 
     const headers = new Headers({ Authorization: `Bearer ${TOKEN}` });
-    return this.http
-      .patch(`${environment.baseURL}/v1/auth/refresh`, {}, { headers })
-      .pipe(
-        map((res: any) => {
-          this.auth.token = res.data.token;
-          return res;
-        })
-      );
+    return this.http.patch(REFREASH, {}, { headers }).pipe(
+      map((res: any) => {
+        this.auth.token = res.data.token;
+        return res;
+      })
+    );
   }
 }

@@ -6,17 +6,22 @@ import { Observable } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import 'rxjs/add/operator/catch';
 
-import { environment } from '../../environments/environment';
+import {
+  EMAIL,
+  VERIFY,
+  CREATE_WORSPACE,
+  CREATE_COMPANY,
+  SET_PASSWORD,
+  SET_NAME
+} from '../common/constants';
 
-import { ErrorHandlerService } from '../common/error-handler.service';
+import { ErrorHandlerService } from '../shared/error-handler/error-handler.service';
 import { AuthService } from '../shared/auth/auth.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SignupService {
-  private readonly baseURL: string = environment.baseURL;
-
   constructor(
     private http: Http,
     private httpClient: HttpClient,
@@ -25,7 +30,7 @@ export class SignupService {
   ) {}
 
   getVerificationCode(email: string): Observable<Response> {
-    return this.http.post(`${this.baseURL}/v1/signup/step1`, { email }).pipe(
+    return this.http.post(EMAIL, { email }).pipe(
       map(this.parseBody),
       catchError(this.errorHandler.handleError)
     );
@@ -38,16 +43,14 @@ export class SignupService {
     user_id: number;
     verification_code: string;
   }): Observable<Response> {
-    return this.http
-      .post(`${this.baseURL}/v1/signup/verify`, { user_id, verification_code })
-      .pipe(
-        map(res => {
-          const body = this.parseBody(res);
-          this.authService.token = body.data.token;
-          return body;
-        }),
-        catchError(this.errorHandler.handleError)
-      );
+    return this.http.post(VERIFY, { user_id, verification_code }).pipe(
+      map(res => {
+        const body = this.parseBody(res);
+        this.authService.token = body.data.token;
+        return body;
+      }),
+      catchError(this.errorHandler.handleError)
+    );
   }
 
   setName({
@@ -57,14 +60,14 @@ export class SignupService {
     first_name: string;
     last_name: string;
   }) {
-    return this.httpClient.post(`${this.baseURL}/v1/signup/name`, {
+    return this.httpClient.post(SET_NAME, {
       first_name,
       last_name
     });
   }
 
   setPassword(password: string) {
-    return this.httpClient.post(`${this.baseURL}/v1/signup/password`, {
+    return this.httpClient.post(SET_PASSWORD, {
       password
     });
   }
@@ -76,7 +79,7 @@ export class SignupService {
     company_name: string;
     company_phone: string;
   }) {
-    return this.httpClient.post(`${this.baseURL}/v1/company/create`, {
+    return this.httpClient.post(CREATE_COMPANY, {
       name: company_name,
       contactNumber: company_phone
     });
@@ -89,7 +92,7 @@ export class SignupService {
     company_id: number;
     workspace: string;
   }) {
-    return this.httpClient.post(`${this.baseURL}/v1/company/workspace`, {
+    return this.httpClient.post(CREATE_WORSPACE, {
       company_id,
       workspace
     });
