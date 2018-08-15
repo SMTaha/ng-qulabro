@@ -4,7 +4,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
-import { SignupModule } from './signup/signup.module';
 import { AppRoutingModule } from './routes/routes';
 
 import { AppComponent } from './app.component';
@@ -12,6 +11,7 @@ import { AppComponent } from './app.component';
 import { AuthInceptorService } from './shared/auth/auth-inceptor.service';
 import { ErrorInceptorService } from './shared/inceptors/error-inceptor.service';
 import { OnboardingModule } from './onboarding/onboarding.module';
+import { DashboardModule } from './dashboard/dashboard.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -22,7 +22,8 @@ import { OnboardingModule } from './onboarding/onboarding.module';
     HttpModule,
     HttpClientModule,
     AppRoutingModule,
-    OnboardingModule
+    OnboardingModule,
+    DashboardModule
   ],
   providers: [
     {
