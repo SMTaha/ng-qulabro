@@ -18,16 +18,18 @@
 
       <div class="formgroup">
         <div class="form-check">
-          <label class="form-check-label">
-            <input formControlName="allow" type="checkbox" class="form-check-input" name="open_org" id="open-org"> Allow anyone at your organisation to join
+          <label class="check-container">Allow anyone at your organisation to join
+            <input type="checkbox" checked="checked">
+            <span class="custom-checkmark"></span>
           </label>
         </div>
       </div>
-      <button type="button" class="btn btn-primary btn-block btn-lg" (click)="onSubmit()">Next</button>
+      <button type="button" class="btn btn-block" (click)="onSubmit()">Next</button>
     </form>
   </ng-container>
   <ng-container class="footer">
-    <p>Get Invite Link</p>
-    <p>Skip this</p>
+    <a href="#">Get Invite Link</a>
+    <br>
+    <a href="#">Skip this</a>    
   </ng-container>
 </app-onboarding-body>
