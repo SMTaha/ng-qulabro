@@ -1,0 +1,80 @@
+.main-nav {
+  margin: 0px;
+  padding: 0px;
+  width: 200px;
+  background: #003d6a;
+  height: 100vh;
+  align-items: baseline;
+  border-color: #fff;
+  border-style: solid;
+  border-width: 0px 3px 0px 0px;
+  box-shadow: 3px 0 0 0 #003d6a;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.main-nav .navbar-nav {
+  display: block;
+  width: 100%;
+}
+
+.main-nav .navbar-nav li {
+  display: block;
+  border-bottom: 3px solid #fff;
+}
+
+.main-nav .navbar-nav li a {
+  display: block;
+  padding: 25px 15px;
+  font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  color: #fff;
+}
+
+.main-nav .navbar-nav li a:hover {
+  color: #fff;
+  background: #9fc53d;
+}
+
+@media screen and (max-width: 991px) {
+  .main-nav {
+    margin: 0px;
+    padding: 10px;
+    width: 100%;
+    background: #003d6a;
+    height: auto;
+    align-items: baseline;
+    border: none;
+    box-shadow: none;
+  }
+  .main-nav button {
+    border: 2px solid #15adf0;
+    background: #15adf0;
+    padding: 2px 7px;
+  }
+  .main-nav button span {
+    color: #15adf0;
+  }
+  .main-nav button:focus,
+  .main-nav button:hover {
+    background: #fff;
+  }
+  .main-nav .navbar-nav {
+    display: block;
+    width: 100%;
+    margin: 14px 0 0 0;
+  }
+  .main-nav .navbar-nav li {
+    display: block;
+    border-bottom: 1px solid #fff;
+  }
+  .main-nav .navbar-nav li a {
+    display: block;
+    padding: 10px 5px;
+    font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    color: #fff;
+  }
+}
