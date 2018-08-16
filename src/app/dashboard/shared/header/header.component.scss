@@ -1,0 +1,89 @@
+.top-bar {
+  background: linear-gradient(#fff, #e5e3e5);
+  border-bottom: 3px solid #003d6a;
+}
+
+.top-search {
+  margin: 0;
+}
+
+.top-search .form-group {
+  margin: 12px 0 11px 0;
+}
+
+.top-search .form-group fa-icon {
+  position: absolute;
+  color: #b3b3b2;
+  left: 35px;
+  top: 20px;
+  font-size: 24px;
+}
+
+.top-search .form-group input {
+  border: 3px solid #003d6a;
+  border-radius: 40px !important;
+  padding-left: 45px;
+  font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+  font-size: 20px;
+}
+
+.top-search .form-control:focus {
+  box-shadow: none;
+  border: 3px solid #15adf0 !important;
+}
+
+.top-search .form-group input::placeholder {
+  color: #b3b3b2;
+  font-weight: bold;
+  font-size: 20px;
+  font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+}
+
+.top-setting {
+  border-left: 3px solid #003d6a;
+  text-align: center;
+}
+
+.top-setting a {
+  margin: 5px 0 0 0;
+  display: block;
+}
+
+.top-setting .settings-link fa-icon {
+  font-size: 42px;
+  color: #003d6a;
+  transition: 0.3s;
+}
+
+.top-setting a fa-icon:hover {
+  color: #15adf0;
+}
+
+/* @media screen and (max-width: 767px) {
+} */
+
+@media screen and (max-width: 575px) {
+  .top-setting a {
+    margin: 0;
+    display: block;
+  }
+
+  .top-setting a fa-icon {
+    font-size: 36px;
+    line-height: 70px;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .top-bar .col-md-2.offset-md-3.col-2.top-setting {
+    padding: 0;
+  }
+
+  .top-setting a {
+    margin: 3px 0 0 0;
+  }
+
+  .top-setting a fa-icon {
+    font-size: 24px;
+  }
+}

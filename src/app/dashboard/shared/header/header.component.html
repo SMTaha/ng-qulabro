@@ -1,3 +1,17 @@
-<p>
-  header works!
-</p>
+<div class="container-fluid top-bar">
+  <div class="row">
+    <div class="col-md-5 offset-md-2 col-8 offset-2">
+      <div class="top-search">
+        <div class="form-group">
+          <fa-icon [icon]="faSearch"></fa-icon>
+          <input class="form-control rounded-0 py-2" type="search" placeholder="Search" id="example-search-input">
+        </div>
+      </div>
+    </div>
+    <div class="col-md-2 offset-md-3 col-2 top-setting">
+      <a href="#" class="settings-link">
+        <fa-icon [icon]="faUserCog"></fa-icon>
+      </a>
+    </div>
+  </div>
+</div>

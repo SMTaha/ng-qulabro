@@ -9,9 +9,8 @@
         }" placeholder="Enter the name of workspace" name="workspace" #workspace="ngModel" ngModel required>
       </div>
       <button class="btn btn-block" [ngClass]="{
-        'btn-disbled': f.invalid,
         'btn-primary': f.valid
-      }" type="submit" [disabled]="f.invalid">Next</button>
+      }" type="submit">Next</button>
     </form>
   </ng-container>
 </app-onboarding-body>
