@@ -1,14 +1,15 @@
 <app-header></app-header>
 <app-main-nav></app-main-nav>
 
-<video #remoteView id="remoteView" class="remoteView" autoplay muted="mute" poster="assets/images/questmark-logo.png"></video>
+<div class="action-wrapper">
 
-<app-controls></app-controls>
+  <div class="video-wrapper">
 
-<video #selfView id="selfView" class="selfView" autoplay muted="mute" poster="assets/images/questmark-logo.png"></video>
+    <app-controls></app-controls>
 
-<ul>
-  <li *ngFor="let participant of participants">
-    Name: {{ participant.display_name }}, UUID: {{ participant.uuid }}
-  </li>
-</ul>
+    <video #remoteView id="remoteView" class="remoteView guest-video" autoplay muted="mute" poster="assets/images/video-call-loading.jpg"></video>
+
+    <video #selfView id="selfView" class="selfView user-video" autoplay muted="mute" poster=""></video>
+  </div>
+
+</div>

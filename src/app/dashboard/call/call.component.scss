@@ -1,3 +1,35 @@
+.action-wrapper {
+  display: inline-block;
+  width: 85%;
+}
+
 video {
-  border: 5px solid black;
+}
+.video-wrapper {
+  margin: 0px;
+  position: relative;
+}
+.remoteView {
+  margin: 0px;
+  width: 100%;
+  height: 100%;
+}
+
+.user-video {
+  margin: 0px;
+  width: 200px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+/*.guest-video {
+  margin: 0px;
+  width: 100%;
+  height: 100%;
+}*/
+@media screen and (max-width: 991px) {
+  .action-wrapper {
+    width: 100%;
+  }
 }
