@@ -2,11 +2,14 @@
 <app-main-nav></app-main-nav>
 
 <div class="action-wrapper">
-  <app-controls></app-controls>
-  <div class="guest-video-cover">
-    <video #remoteView id="remoteView" class="remoteView guest-video" autoplay muted="mute" poster="assets/images/questmark-logo.png"></video>
-  </div>
-  <video #selfView id="selfView" class="selfView user-video" autoplay muted="mute" poster="assets/images/questmark-logo.png"></video>
 
+  <div class="video-wrapper">
+
+    <app-controls></app-controls>
+
+    <video #remoteView id="remoteView" class="remoteView guest-video" autoplay muted="mute" poster="assets/images/video-call-loading.jpg"></video>
+
+    <video #selfView id="selfView" class="selfView user-video" autoplay muted="mute" poster=""></video>
+  </div>
 
 </div>
