@@ -1,15 +1,11 @@
 <app-header></app-header>
 <app-main-nav></app-main-nav>
 
-<video
-  #remoteView id="remoteView" class="remoteView" autoplay muted="mute"
-  poster="assets/images/questmark-logo.png"
-></video>
+<video #remoteView id="remoteView" class="remoteView" autoplay muted="mute" poster="assets/images/questmark-logo.png"></video>
 
-<video
-  #selfView id="selfView" class="selfView" autoplay muted="mute"
-  poster="assets/images/questmark-logo.png"
-></video>
+<app-controls></app-controls>
+
+<video #selfView id="selfView" class="selfView" autoplay muted="mute" poster="assets/images/questmark-logo.png"></video>
 
 <ul>
   <li *ngFor="let participant of participants">

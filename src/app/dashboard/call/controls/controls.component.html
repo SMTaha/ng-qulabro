@@ -1,0 +1,21 @@
+<div class="row">
+  <div class="col-1 text-center" *ngFor="let icon of icons; let i=index">
+    <a role="button">
+      <app-control [icon]="icon.isActive ? icon.active : icon.inactive" (state)="handleState($event)"></app-control>
+    </a>
+  </div>
+
+  <div class="col-1 text-center ">
+  </div>
+
+  <div class="col-1 text-center ">
+    <a role="button ">
+      <fa-icon [icon]="faPhoneSlash "></fa-icon>
+    </a>
+  </div>
+  <div class="col-1 text-center ">
+    <a role="button ">
+      <fa-icon [icon]="faUsers "></fa-icon>
+    </a>
+  </div>
+</div>
